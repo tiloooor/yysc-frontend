@@ -1,33 +1,134 @@
-.App {
+body {
+  padding: 20px;
+}
+
+.btn-general {
+  background-color: #9d8df1;
+  color: #fff;
+}
+
+.link-general {
+  display: inline-block;
+  font-weight: 100;
+  margin-top: 30px;
+  color: gray;
+}
+
+.link-general:hover {
+  color: #9d8df1;
+}
+
+/* =============================================
+|   |   |   | Circles
+============================================== */
+.md-circle {
+  border: 2px solid #e9eaec;
+  background-color: #e9eaec;
+  display: inline-block;
+  padding: 35px 25px;
+  border-radius: 50%;
+}
+
+.sm-circle {
+  padding: 10px 10px;
+  border: 2px solid #9d8df1;
+  background-color: #fff;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+/* =============================================
+|   |   |   | Sign In
+============================================== */
+#sign-in-container {
+  /* Todo: view width! */
+  width: 400px;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#sign-in-container h3 {
+  font-weight: 100;
+}
+
+#sign-in-container .sm-circle {
+  position: absolute;
+  bottom: 0;
+  left: 10;
+}
+
+#sign-in-desc {
+  margin-top: 35px;
+  font-weight: 100;
+  font-size: 15px;
+}
+
+#sign-in-desc a {
+  color: #9d8df1;
+}
+
+#sign-in-header {
+  position: relative;
+}
+
+#sign-in-container form {
+  margin: 60px 0;
+}
+
+#sign-in-container input {
+  border: 0;
+  border-bottom: 1px solid #e9eaec;
+}
+
+#sign-in-container button {
+  margin-top: 45px;
+  background-color: #9d8df1;
+  width: 80%;
+  color: #fff;
+  box-shadow: 12px 8px 3px 1px rgba(0, 0, 255, .2);
+}
+
+#sign-in-container label {
+  display: block;
+  text-align: left;
+  /* transform: translate(0%, 125%); */
+  font-weight: 100;
+  font-size: 16px;
+  margin: 0;
+  
+}
+
+/* =============================================
+|   |   |   | Dashboard
+============================================== */
+.task-btns {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.btn-task {
+  margin: 15px 25px;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  border-color: transparent;
+  color: #9d8df1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.btn-task:focus {
+  background: #9d8df1;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.daily-task-container {
+  background: #9d8df1;
+  padding: 2rem;
+  color: #fff;
+  border-radius: .2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.daily-task-container h3 {
+  margin-bottom: 1rem;
 }
