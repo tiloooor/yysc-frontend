@@ -5,21 +5,27 @@ import { logout } from '../../actions/auth';
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     const authLinks = (
-        <ul className="navbar-nav">
-            {/* <li className="nav-item">
+        <ul>
+            <li>
                 <Link to="/">Developers</Link>
             </li>
-            <li className="nav-item">
+            <li>
                 <Link to="/dashboard">
                     <i className='fa fa-user' />{' '}
                     <span className='hide-sm'>Dashboard</span>
                 </Link>
-            </li> */}
-            <li className="nav-item">
+            </li>
+            <li>
                 <a onClick={logout} href="#!">
                     <i class="fa fa-sign-out-alt" />{' '}
                     <span className="hide-sm">Logout</span>
                 </a>
+            </li>
+            <li>
+                <Link to="/posts">
+                    <i className='fa fa-users' />{' '}
+                    <span className='hide-sm'>Posts</span>
+                </Link>
             </li>
         </ul>
     );

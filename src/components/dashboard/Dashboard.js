@@ -13,7 +13,7 @@ const Dashboard = ({
     };
 
     return (
-        <div>
+        <div className="container">
             <DailyTask data={data} />
             <DailyTaskButtons />
         </div>

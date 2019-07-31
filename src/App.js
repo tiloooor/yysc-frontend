@@ -6,6 +6,7 @@ import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Navbar from './components/layout/Navbar';
 import Profile from './components/profile/Profile';
+import Posts from './components/post/Posts';
 import PrivateRoute from './components/routing/PrivateRoute';
 
 // Redux
@@ -44,6 +45,11 @@ const App = () => {
               exact
               path="/dashboard"
               component={Dashboard}
+            />
+            <PrivateRoute
+              exact
+              path="/posts"
+              component={Posts}
             />
           </Switch>
         </div>
