@@ -1,19 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 
 import DailyTask from './DailyTask';
-import DailyTaskButtons from './DailyTaskButtons'
+import DailyTaskButtons from './DailyTaskButtons';
 
-const Dashboard = () => {
+import { connect } from 'react-redux';
+
+const Dashboard = ({
+    auth: { user },
+}) => {
     const data = {
-        "tasks": ["Reading Meditation Food", "Restorative Yoga class"]
-    }
+        tasks: ['Reading Meditation Food', 'Restorative Yoga class']
+    };
 
     return (
         <div>
-            <DailyTask data={data} /> 
+            <DailyTask data={data} />
             <DailyTaskButtons />
         </div>
-    )
-}
+    );
+};
 
-export default Dashboard
+const mapStateToProps = (state) => ({
+    auth: state.auth
+});
+
+export default connect(
+    mapStateToProps
+)(Dashboard);
