@@ -208,6 +208,18 @@
 }
 
 /* =============================================
+|   |   |   | Social Wall
+============================================== */
+.post-form {
+  margin: 1rem 0;
+}
+
+.post-form textarea {
+  border-color: transparent;
+  width: 100%;
+}
+
+/* =============================================
 |   |   |   | PostItem
 ============================================== */
 .post-card {
@@ -232,13 +244,13 @@
 }
 
 /* =============================================
-|   |   |   | Social Wall
+|   |   |   | Group
 ============================================== */
-.post-form {
-  margin: 1rem 0;
+.social-wall-group {
+  background: blue !important;
 }
 
-.post-form textarea {
-  border-color: transparent;
-  width: 100%;
+.social-wall-img {
+  width: 45px;
+  height: 45px;
 }

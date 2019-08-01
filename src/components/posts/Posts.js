@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getPosts } from '../../actions/post';
 import PostItem from './PostItem';
 import PostForm from './PostForm';
+import Group from './Group';
 
 const Posts = ({ getPosts, post: { posts, loading } }) => {
   useEffect(() => {
@@ -15,7 +16,9 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
     <Fragment>
       <div className="container">
         <h5>Group</h5>
-        <div className="group"></div>
+        <div className="group">
+          <Group />
+        </div>
 
         <h5>Feed</h5>
         <PostForm />
