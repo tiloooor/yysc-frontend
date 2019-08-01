@@ -1,22 +1,24 @@
 import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { getCurrentProfile } from '../../actions/profile';
+import { Link } from 'react-router-dom';
+import { getProfileById } from '../../actions/profile';
 
 import ViewedResources from './ViewedResources';
 
 const Profile = ({
   auth,
-  getCurrentProfile,
+  match,
+  getProfileById,
   profile: { profileData, loading }
 }) => {
   useEffect(() => {
-    getCurrentProfile();
-  }, []);
+    getProfileById(match.params.id);
+  }, [getProfileById]);
 
   return (
     <Fragment>
       {profileData === null || loading ? (
-        <h1>Loading</h1>
+        <h1>Loading...</h1>
       ) : (
         <Fragment>
           <div className="jumbotron jumbotron-fluid">
@@ -28,6 +30,9 @@ const Profile = ({
                 alt=""
               />
               <p>User since: {profileData.date}</p>
+              {auth.isAuthenticated && auth.loading === false && auth.user._id === profileData._id && (
+                <Link to='/edit-profile' className="btn btn-general">Edit Profile</Link>
+              )}
             </div>
           </div>
 
@@ -45,5 +50,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(
   mapStateToProps,
-  { getCurrentProfile }
+  { getProfileById }
 )(Profile);
