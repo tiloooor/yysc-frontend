@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getPosts } from '../../actions/post';
 import PostItem from './PostItem';
+import PostForm from './PostForm';
 
 const Posts = ({ getPosts, post: { posts, loading } }) => {
   useEffect(() => {
@@ -9,18 +10,25 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
   }, [getPosts]);
 
   return loading ? (
-      <h1>Loading...</h1>
+    <h1>Loading...</h1>
   ) : (
-      <Fragment>
-          <h1>Posts</h1>
-          <p>Welcome to the community!</p>
-          <div className="posts">
-            {posts.map(post => (
-                <PostItem key={post._id} post={post}/>
-            ))}
-          </div>
-      </Fragment>
-  )
+    <Fragment>
+      <div className="container">
+        <h5>Group</h5>
+        <div className="group"></div>
+
+        <h5>Feed</h5>
+        <PostForm />
+
+        <div className="posts">
+          {posts.map((post) => (
+            <PostItem key={post._id} post={post} />
+          ))}
+        </div>
+        
+      </div>
+    </Fragment>
+  );
 };
 
 const mapStateToProps = (state) => ({
