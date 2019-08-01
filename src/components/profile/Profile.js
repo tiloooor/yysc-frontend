@@ -29,6 +29,7 @@ const Profile = ({
                 style={{ height: '150px', width: '150px' }}
                 alt=""
               />
+              <h5>{profileData.name}</h5>
               <p>User since: {profileData.date}</p>
               {auth.isAuthenticated && auth.loading === false && auth.user._id === profileData._id && (
                 <Link to='/edit-profile' className="btn btn-general">Edit Profile</Link>

@@ -10,13 +10,14 @@ const PostItem = ({
   deletePost,
   auth,
   showActions,
-  post: { _id, text, avatar, user, likes, comments, date }
+  post: { _id, name, text, avatar, user, likes, comments, date }
 }) => {
-  console.log("POST:", _id);
+  console.log("user", name);
 
   return (
     <div className="card post-card">
       <div className="card-body">
+        <h6>{name}</h6>
         <Link to={`/profile/${user}`}>
           <img className="rounded-circle" src={avatar} alt="avatar" />
         </Link>
