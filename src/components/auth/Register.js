@@ -3,14 +3,15 @@ import { connect } from 'react-redux'
 import { Link, Redirect } from 'react-router-dom'
 import { register } from '../../actions/auth';
 
-const Register = ({ register, isAuthenticated }) => {
+const Register = ({ register, isAuthenticated, location: { pathname } }) => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
-    passwordConfirm: ''
+    passwordConfirm: '',
+    admin: pathname === '/admin/register' ? true : false
   });
 
-  const { email, password, passwordConfirm } = formData;
+  const { email, password, passwordConfirm, admin } = formData;
 
   const onChange = (e) => {
     console.log(e.target.value);
@@ -25,7 +26,8 @@ const Register = ({ register, isAuthenticated }) => {
       } else {
           register({
               email, 
-              password
+              password, 
+              admin
           });
       }
   };
