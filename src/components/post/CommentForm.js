@@ -26,7 +26,7 @@ const CommentForm = ({ postId, addComment }) => {
           onChange={(e) => setText(e.target.value)}
           required
         />
-        <input type="submit" class="btn btn-dark my-1" value="Add Comment" />
+        <input type="submit" className="btn btn-dark my-1" value="Add Comment" />
       </form>
     </div>
   );

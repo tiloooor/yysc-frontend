@@ -1,12 +1,27 @@
-import React from 'react'
+import React, { Component } from 'react';
+import ScrollMenu from 'react-horizontal-scrolling-menu';
 
-const GroupItem = ({ profile: { name, avatar} }) => {
-    return (
-        <div style={{ float: 'left', width: '100px'}}>
-            <img className="rounded-circle social-wall-img" src={avatar} alt="" />
-            <p>{ name }</p>
+const GroupItem = ({ profiles }) => {
+    const MenuItem = ({ avatar, name }) => {
+        return <div className={`menu-item`}>
+            <img src={avatar} className="rounded-circle" alt="" />
+            <p>{name}</p>
         </div>
-    )
-}
+    };
 
-export default GroupItem
+    const Menu = () =>
+        profiles.map((profile) => {
+            return (
+                <MenuItem
+                    name={profile.name}
+                    avatar={profile.avatar}
+                    key={profile.name}
+                />
+            );
+        });
+
+    const menu = Menu();
+    return <ScrollMenu data={menu} />;
+};
+
+export default GroupItem;

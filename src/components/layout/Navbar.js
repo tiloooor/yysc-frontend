@@ -26,7 +26,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       </li>
       <li className="nav-item">
         <a onClick={logout} href="#!">
-          <i class="fa fa-sign-out-alt" />{' '}
+          <i className="fa fa-sign-out-alt" />{' '}
           <span className="hide-sm">Logout</span>
         </a>
       </li>
@@ -44,7 +44,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       <nav className="navbar navbar-expand-lg navbar-light">
         <Fragment>
           <Link to="/" className="navbar-brand">
-            <i class="fa fa-ravelry fa-md" aria-hidden="true" />
+            <i className="fa fa-ravelry fa-md" aria-hidden="true" />
           </Link>
 
           <button
@@ -57,7 +57,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             aria-label="Toggle navigation"
             onClick={() => toggleNavbar()}
           >
-            <span class="navbar-toggler-icon" />
+            <span className="navbar-toggler-icon" />
           </button>
 
           <div className={classTwo} id="navbarToggler">

@@ -1,7 +1,8 @@
 import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { getProfiles } from '../../actions/profile';
+
 import GroupItem from './GroupItem';
-import { getProfiles } from '../../actions/profile'
 
 const Group = ({ getProfiles, profile: { profiles, loading } }) => {
     useEffect(() => {
@@ -13,12 +14,8 @@ const Group = ({ getProfiles, profile: { profiles, loading } }) => {
             Loading..
         </div>
     ) : (
-        <div className="social-wall-group">
-            { profiles.map(profile => (
-                <GroupItem profile={profile} />
-            ))}
-        </div>
-    )
+            <GroupItem profiles={profiles}/>
+        )
 }
 
 const mapStateToProps = state => ({

@@ -22,7 +22,7 @@ const PostForm = ({ addPost }) => {
                     required
                 >
                 </textarea>
-                <input type="submit" class="btn btn-md btn-general my-1" value="Submit" />
+                <input type="submit" className="btn btn-md btn-general my-1" value="Submit" />
             </form>
         </div>
     )

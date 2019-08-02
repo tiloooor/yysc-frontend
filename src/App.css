@@ -96,7 +96,7 @@
   background-color: #9d8df1;
   width: 80%;
   color: #fff;
-  box-shadow: 12px 8px 3px 1px rgba(0, 0, 255, .2);
+  box-shadow: 12px 8px 3px 1px rgba(0, 0, 255, 0.2);
 }
 
 #sign-in-container label {
@@ -106,7 +106,6 @@
   font-weight: 100;
   font-size: 16px;
   margin: 0;
-  
 }
 
 /* =============================================
@@ -134,7 +133,7 @@
   background: #9d8df1;
   padding: 2rem;
   color: #fff;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
 }
 
 .daily-task-container h3 {
@@ -246,11 +245,12 @@
 /* =============================================
 |   |   |   | Group
 ============================================== */
-.social-wall-group {
-  background: blue !important;
+.menu-item {
+  padding: 2rem;
+  margin: 0.5rem;
 }
 
-.social-wall-img {
-  width: 45px;
-  height: 45px;
+.menu-item img {
+  height: 5rem;
+  width: 5rem;
 }
