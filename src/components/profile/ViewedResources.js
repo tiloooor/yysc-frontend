@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollMenu from 'react-horizontal-scrolling-menu';
 
 const ViewedResources = () => {
   const resources = [
@@ -7,22 +8,23 @@ const ViewedResources = () => {
     'https://www.youtube.com/watch?v=FoI94Epkjrc'
   ];
 
-  const viewedResources = resources.map((resource) => (
-    <div className="viewed-resource">
-      <a href={resource}>
-        <i className="fa fa-youtube-play" aria-hidden="true" />
-      </a>
-    </div>
-  ));
-
-  return (
-    <div className="container">
-      <h5>Viewed Resources</h5>
-      <div className="row">
-        {viewedResources}
+  const ResourceItem = ({ resource }) => {
+    return (
+      <div className="viewed-resource">
+        <a href={resource}>
+          <i className="fa fa-youtube-play" aria-hidden="true" />
+        </a>
       </div>
-    </div>
-  );
+    );
+  };
+
+  const Menu = () =>
+    resources.map((resource) => {
+      return <ResourceItem resource={resource} />;
+    });
+
+  const menu = Menu();
+  return <ScrollMenu data={menu} />;
 };
 
 export default ViewedResources;
