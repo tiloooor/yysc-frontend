@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { connect } from 'react-redux'
-import { Link, Redirect } from 'react-router-dom'
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
 import { register } from '../../actions/auth';
 
 const Register = ({ register, isAuthenticated, location: { pathname } }) => {
@@ -8,32 +8,33 @@ const Register = ({ register, isAuthenticated, location: { pathname } }) => {
     email: '',
     password: '',
     passwordConfirm: '',
-    admin: pathname === '/admin/register' ? true : false
+    admin: pathname === '/admin/register' ? true : false,
+    adminCode: ''
   });
 
-  const { email, password, passwordConfirm, admin } = formData;
+  const { email, password, passwordConfirm, admin, adminCode } = formData;
 
   const onChange = (e) => {
-    console.log(e.target.value);
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const onSubmit = async (e) => {
-      e.preventDefault();
+    e.preventDefault();
 
-      if (password !== passwordConfirm) {
-          console.log('Passwords do not match!');
-      } else {
-          register({
-              email, 
-              password, 
-              admin
-          });
-      }
+    if (password !== passwordConfirm) {
+      console.log('Passwords do not match!');
+    } else {
+      register({
+        email,
+        password,
+        admin,
+        adminCode
+      });
+    }
   };
 
   if (isAuthenticated) {
-      return <Redirect to="/dashboard" />
+    return <Redirect to="/dashboard" />;
   }
 
   return (
@@ -85,6 +86,22 @@ const Register = ({ register, isAuthenticated, location: { pathname } }) => {
             aria-describedby="passwordConfirmation"
           />
         </div>
+        {admin ? (
+          <div className="form-group">
+            <label htmlFor="adminCode">Administrator Code</label>
+            <input
+              type="text"
+              className="form-control"
+              name="adminCode"
+              value={adminCode}
+              onChange={(e) => onChange(e)}
+              aria-describedby="adminCode"
+            />
+          </div>
+        ) : (
+          <div />
+        )}
+
         <button type="submit" className="btn btn-general">
           Sign Up
         </button>
@@ -96,8 +113,11 @@ const Register = ({ register, isAuthenticated, location: { pathname } }) => {
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated
-})
+});
 
-export default connect(mapStateToProps, { register })(Register);
+export default connect(
+  mapStateToProps,
+  { register }
+)(Register);
