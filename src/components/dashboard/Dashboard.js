@@ -1,13 +1,21 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 
-const Dashboard = ({ auth: { loading, user } }) => {
+const Dashboard = ({ auth: { user } }) => {
+  const adminButtons = (
+    <Link to="/resource/task">
+      <button type="button">Create Task</button>
+    </Link>
+  );
 
-  return loading ? (
+  return user === null ? (
     <h1>Loading</h1>
   ) : (
-    <div>{user.admin ? <h3>I'm an admin</h3> : <h3>I'm NOT an admin</h3>}</div>
+    <div className="container">
+      {user.admin ? <div>{ adminButtons }</div> : <h3>I'm NOT an admin</h3>}
+    </div>
   );
 };
 

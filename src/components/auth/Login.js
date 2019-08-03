@@ -22,7 +22,7 @@ const Login = ({ login, isAuthenticated }) => {
 
   if (isAuthenticated) {
     return <Redirect to="/dashboard" />
-}
+  }
 
   return (
     <div id="sign-in-container">

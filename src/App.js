@@ -8,6 +8,8 @@ import Navbar from './components/layout/Navbar';
 import Profile from './components/profile/Profile';
 import Post from './components/post/Post';
 import Posts from './components/posts/Posts';
+import CreateTask from './components/admin/CreateTask';
+
 import PrivateRoute from './components/routing/PrivateRoute';
 
 // Redux
@@ -38,26 +40,11 @@ const App = () => {
             <Route path="/login" exact component={Login} />
             <Route path="/register" exact component={Register} />
             <Route path="/admin/register" exact component={Register} />
-            <PrivateRoute
-              exact
-              path="/profile/:id"
-              component={Profile}
-            />
-            <PrivateRoute
-              exact
-              path="/dashboard"
-              component={Dashboard}
-            />
-            <PrivateRoute
-              exact
-              path="/posts"
-              component={Posts}
-            />
-            <PrivateRoute
-              exact
-              path="/post/:id"
-              component={Post}
-            />
+            <PrivateRoute exact path="/profile/:id" component={Profile} />
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/posts" component={Posts} />
+            <PrivateRoute exact path="/post/:id" component={Post} />
+            <PrivateRoute exact path="/resource/task" component={CreateTask} />
           </Switch>
         </div>
       </BrowserRouter>
