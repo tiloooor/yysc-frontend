@@ -12,8 +12,6 @@ const PostItem = ({
   showActions,
   post: { _id, name, text, avatar, user, likes, comments, date }
 }) => {
-  console.log("user", name);
-
   return (
     <div className="card post-card">
       <div className="card-body">

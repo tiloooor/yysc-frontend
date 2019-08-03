@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getPosts } from '../../actions/post';
+import Events from './Events';
 import PostItem from './PostItem';
 import PostForm from './PostForm';
 import Group from './Group';
@@ -15,6 +16,8 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
   ) : (
     <Fragment>
       <div className="container">
+        <Events />
+  
         <h5>Group</h5>
         <div className="group">
           <Group />

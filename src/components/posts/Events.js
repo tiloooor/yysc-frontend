@@ -2,8 +2,8 @@ import React from 'react'
 
 const Events = () => {
     return (
-        <div className="jumbotron-fluid">
-            Yo!
+        <div className="jumbotron jumbotron-fluid">
+            
         </div>
     )
 }

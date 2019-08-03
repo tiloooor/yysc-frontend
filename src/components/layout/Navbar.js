@@ -17,9 +17,6 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
       <li className="nav-item">
-        <Link to="/">Developers</Link>
-      </li>
-      <li className="nav-item">
         <Link to="/dashboard">
           <span className="hide-sm">Dashboard</span>
         </Link>

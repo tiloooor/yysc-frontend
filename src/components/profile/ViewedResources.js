@@ -24,21 +24,22 @@ const ViewedResources = () => {
     });
 
   const Arrow = ({ text, className }) => {
-    return (
-      <div
-        className={className}
-      >{text}</div>
-    );
+    return <div className={className}>{text}</div>;
   };
 
-  const ArrowLeft = Arrow({ text: '<', className: 'arrow-prev' });
-  const ArrowRight = Arrow({ text: '>', className: 'arrow-next' });
+  const ArrowLeft = Arrow({
+    text: <i className="fa fa-angle-left" aria-hidden="true" />,
+    className: 'arrow-prev'
+  });
+  const ArrowRight = Arrow({
+    text: <i className="fa fa-angle-right" aria-hidden="true" />,
+    className: 'arrow-next'
+  });
   const menu = Menu();
 
-  return <ScrollMenu
-        data={menu}
-        arrowLeft={ArrowLeft}
-        arrowRight={ArrowRight} />;
+  return (
+    <ScrollMenu data={menu} arrowLeft={ArrowLeft} arrowRight={ArrowRight} />
+  );
 };
 
 export default ViewedResources;
