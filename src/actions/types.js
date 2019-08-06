@@ -23,4 +23,5 @@ export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 export const DELETE_POST = 'DELETE_POST';
 export const ADD_POST = 'ADD_POST';
 export const ADD_TASK = 'ADD_TASK';
+export const GET_TASKS = 'GET_TASKS';
 export const RESOURCE_ERROR = 'RESOURCE_ERROR';

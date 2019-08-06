@@ -1,20 +1,33 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 
+import DailyTask from './DailyTask';
+
 const Dashboard = ({ auth: { user } }) => {
   const adminButtons = (
-    <Link to="/resource/task">
-      <button type="button">Create Task</button>
-    </Link>
+    <div>
+      <Link to="/resource/task">
+        <button type="button" className="btn btn-general">Create Task</button>
+      </Link>
+      <Link to="/upload">
+        <button type="button" className="btn btn-general">Upload Resource</button>
+      </Link>
+    </div>
   );
 
   return user === null ? (
     <h1>Loading</h1>
   ) : (
     <div className="container">
-      {user.admin ? <div>{ adminButtons }</div> : <h3>I'm NOT an admin</h3>}
+      {user.admin ? (
+        <div>{adminButtons}</div>
+      ) : (
+        <div>
+          <DailyTask />
+        </div>
+      )}
     </div>
   );
 };

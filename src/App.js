@@ -9,6 +9,7 @@ import Profile from './components/profile/Profile';
 import Post from './components/post/Post';
 import Posts from './components/posts/Posts';
 import CreateTask from './components/admin/CreateTask';
+import Upload from './components/upload/Upload';
 
 import PrivateRoute from './components/routing/PrivateRoute';
 
@@ -44,6 +45,7 @@ const App = () => {
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/posts" component={Posts} />
             <PrivateRoute exact path="/post/:id" component={Post} />
+            <PrivateRoute exact path="/upload" component={Upload} />
             <PrivateRoute exact path="/resource/task" component={CreateTask} />
           </Switch>
         </div>
