@@ -34,7 +34,6 @@ export const addTask = (formData) => async (dispatch) => {
 export const getTasks = () => async (dispatch) => {
   try {
     const res = await axios.get('http://localhost:5000/api/resource/task');
-    console.log('res: ', res);
 
     dispatch({
       type: GET_TASKS,
