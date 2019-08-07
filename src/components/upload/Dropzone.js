@@ -75,6 +75,7 @@ const Dropzone = ({ onFilesAdded, disabled }) => {
         ref={fileInputRef}
         className="file-input"
         type="file"
+        name="file"
         multiple
         onChange={addFiles}
       />
