@@ -25,3 +25,5 @@ export const ADD_POST = 'ADD_POST';
 export const ADD_TASK = 'ADD_TASK';
 export const GET_TASKS = 'GET_TASKS';
 export const RESOURCE_ERROR = 'RESOURCE_ERROR';
+export const UPLOAD_RESOURCE = "UPLOAD_RESOURCE";
+export const UPLOAD_ERROR = "UPLOAD_ERROR";
