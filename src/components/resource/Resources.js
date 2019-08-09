@@ -1,11 +1,30 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { getResources } from '../../actions/resource';
 
-const Resources = () => {
-    return (
-        <div>
-            Resources Page!
-        </div>
-    )
-}
+import ResourceItem from './ResourceItem';
+import { link } from 'fs';
 
-export default Resources
+const Resources = ({ resources, getResources }) => {
+  useEffect(() => {
+    getResources();
+  }, [getResources]);
+
+  return (
+    <div className="container">
+      <h4>Resources: </h4>
+      {resources.map((resource) => (
+        <ResourceItem name={resource.name} desc={resource.desc} />
+      ))}
+    </div>
+  );
+};
+
+const mapStateToProps = (state) => ({
+  resources: state.resource.resources
+});
+
+export default connect(
+  mapStateToProps,
+  { getResources }
+)(Resources);
