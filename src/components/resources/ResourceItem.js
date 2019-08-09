@@ -11,8 +11,8 @@ const ResourceItem = ({
 }) => {
   const previewContent = (
     <div>
-      <h3>{name}</h3>
-      <p>{desc}</p>
+      <h3 className="card-title">{name}</h3>
+      <p className="card-text">{desc}</p>
     </div>
   );
 
@@ -28,9 +28,11 @@ const ResourceItem = ({
   );
 
   return preview ? (
-    <div className="card">
-      <div className="carßd-body">
-        <Link to={`/resource/${_id}`}>{previewContent}</Link>
+    <div className="col-md-4">
+      <div className="card">
+        <div className="card-body">
+          <Link to={`/resource/${_id}`}>{previewContent}</Link>
+        </div>
       </div>
     </div>
   ) : (

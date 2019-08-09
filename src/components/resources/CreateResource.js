@@ -9,19 +9,17 @@ const CreateResource = ({ auth: { user }, addResource }) => {
     name: '',
     creator: '', // todo user.name
     desc: '',
-    links: [{...defaultInfo}]
+    links: [{ ...defaultInfo }]
   });
 
   const { name, desc, links } = formData;
 
   const onChange = (e) => {
     if (['link', 'url'].includes(e.target.className)) {
-      console.log(e.target.dataset.id);
-      console.log(e.target.className);
-      const updatedLinks = [...links]
+      const updatedLinks = [...links];
       updatedLinks[e.target.dataset.id][e.target.className] = e.target.value;
       console.log(updatedLinks);
-      setFormData({links: updatedLinks });
+      setFormData({ ...formData, links: updatedLinks });
     } else {
       setFormData({ ...formData, [e.target.name]: e.target.value });
     }
@@ -33,12 +31,14 @@ const CreateResource = ({ auth: { user }, addResource }) => {
   };
 
   const addLink = (e) => {
-    setFormData({links: [...links, {...defaultInfo}] });
+    setFormData({ ...formData, links: [...links, { ...defaultInfo }] });
   };
 
   const deleteLink = (idx) => () => {
     /* Todo */
   };
+
+  console.log(formData);
 
   return (
     <div className="container">

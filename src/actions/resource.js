@@ -10,6 +10,8 @@ export const addResource = (formData) => async (dispatch) => {
     }
   };
 
+  console.log(formData)
+
   try {
     const res = await axios.post(
       'http://localhost:5000/api/resource',

@@ -12,10 +12,11 @@ const Resources = ({ resources, getResources }) => {
 
   return (
     <div className="container">
-      <h4>Resources: </h4>
-      {resources.map((resource) => (
-        <ResourceItem key={resource._id} resource={resource} />
-      ))}
+      <div className="row">
+        {resources.map((resource) => (
+          <ResourceItem key={resource._id} resource={resource} />
+        ))}
+      </div>
     </div>
   );
 };
