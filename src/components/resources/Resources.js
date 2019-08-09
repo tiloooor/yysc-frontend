@@ -14,7 +14,7 @@ const Resources = ({ resources, getResources }) => {
     <div className="container">
       <h4>Resources: </h4>
       {resources.map((resource) => (
-        <ResourceItem name={resource.name} desc={resource.desc} />
+        <ResourceItem key={resource._id} resource={resource} />
       ))}
     </div>
   );

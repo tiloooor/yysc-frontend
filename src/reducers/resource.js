@@ -3,7 +3,8 @@ import {
   GET_TASKS,
   RESOURCE_ERROR,
   ADD_RESOURCE,
-  GET_RESOURCES
+  GET_RESOURCES,
+  GET_RESOURCE
 } from '../actions/types';
 
 const initialState = {
@@ -25,15 +26,16 @@ export default function(state = initialState, action) {
         loading: false
       };
     case ADD_RESOURCE:
+    case GET_RESOURCES:
       return {
         ...state,
         resources: payload,
         loading: false
       };
-    case GET_RESOURCES:
+    case GET_RESOURCE:
       return {
         ...state,
-        resources: payload,
+        resource: payload,
         loading: false
       };
     case GET_TASKS:

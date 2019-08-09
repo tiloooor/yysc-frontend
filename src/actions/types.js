@@ -27,5 +27,6 @@ export const GET_TASKS = 'GET_TASKS';
 export const RESOURCE_ERROR = 'RESOURCE_ERROR';
 export const ADD_RESOURCE = "ADD_RESOURCE";
 export const GET_RESOURCES = "GET_RESOURCES";
+export const GET_RESOURCE = "GET_RESOURCE";
 export const UPLOAD_RESOURCE = "UPLOAD_RESOURCE";
 export const UPLOAD_ERROR = "UPLOAD_ERROR";

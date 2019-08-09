@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { ADD_TASK, GET_TASKS, RESOURCE_ERROR, ADD_RESOURCE, GET_RESOURCES } from './types';
+import { ADD_TASK, GET_TASKS, RESOURCE_ERROR, ADD_RESOURCE, GET_RESOURCES, GET_RESOURCE } from './types';
 
 // Add Resource
 export const addResource = (formData) => async (dispatch) => {
@@ -47,6 +47,24 @@ export const getResources = () => async (dispatch) => {
     });
   }
 };
+
+// Get Resource by ID
+export const getResource = (id) => async (dispatch) => {
+  try {
+    const res = await axios.get(`http://localhost:5000/api/resource/${id}`);
+    console.log('res: ', res);
+
+    dispatch({
+      type: GET_RESOURCE,
+      payload: res.data
+    });
+  } catch (err) {
+    dispatch({
+      type: RESOURCE_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status }
+    });
+  }
+}
 
 // Add Task
 export const addTask = (formData) => async (dispatch) => {
