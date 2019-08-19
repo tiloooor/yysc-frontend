@@ -4,7 +4,8 @@ import {
   RESOURCE_ERROR,
   ADD_RESOURCE,
   GET_RESOURCES,
-  GET_RESOURCE
+  GET_RESOURCE, 
+  GET_LIKED_RESOURCES
 } from '../actions/types';
 
 const initialState = {
@@ -36,6 +37,12 @@ export default function(state = initialState, action) {
       return {
         ...state,
         resource: payload,
+        loading: false
+      };
+    case GET_LIKED_RESOURCES:
+      return {
+        ...state,
+        resources: payload,
         loading: false
       };
     case GET_TASKS:

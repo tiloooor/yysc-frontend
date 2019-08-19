@@ -9,10 +9,11 @@ import Profile from './components/profile/Profile';
 import Post from './components/post/Post';
 import Posts from './components/posts/Posts';
 import CreateTask from './components/admin/CreateTask';
-import CreateResource from './components/resources/CreateResource'
-import Resource from './components/resource/Resource'
-import Resources from './components/resources/Resources'
+import CreateResource from './components/resources/CreateResource';
+import Resource from './components/resource/Resource';
+import Resources from './components/resources/Resources';
 import PrivateRoute from './components/routing/PrivateRoute';
+import Message from './components/messages/Message';
 
 // Redux
 import store from './store';
@@ -50,6 +51,7 @@ const App = () => {
             <PrivateRoute exact path="/resource/:id" component={Resource} />
             <PrivateRoute exact path="/resources" component={Resources} />
             <PrivateRoute exact path="/resource/task" component={CreateTask} />
+            <PrivateRoute exact path="/message" component={Message} />
           </Switch>
         </div>
       </BrowserRouter>

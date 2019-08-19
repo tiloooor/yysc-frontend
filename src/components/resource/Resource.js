@@ -5,15 +5,12 @@ import { getResource } from '../../actions/resource';
 import ResourceItem from '../resources/ResourceItem';
 
 const Resource = ({ getResource, resource: { resource, loading }, match }) => {
-  console.log(match.params.id);
   useEffect(() => {
     getResource(match.params.id);
-  }, [getResource]);
-
-  console.log('in resource: ', resource);
+  }, [getResource, match.params.id]);
 
   return !loading && resource != null ? (
-      <ResourceItem resource={resource} preview={false} />
+    <ResourceItem resource={resource} preview={false} />
   ) : (
     <h1>Loading</h1>
   );

@@ -18,7 +18,7 @@ const CreateResource = ({ auth: { user }, addResource }) => {
     if (['link', 'url'].includes(e.target.className)) {
       const updatedLinks = [...links];
       updatedLinks[e.target.dataset.id][e.target.className] = e.target.value;
-      console.log(updatedLinks);
+      // console.log(updatedLinks);
       setFormData({ ...formData, links: updatedLinks });
     } else {
       setFormData({ ...formData, [e.target.name]: e.target.value });

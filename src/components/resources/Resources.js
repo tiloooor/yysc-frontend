@@ -10,7 +10,9 @@ const Resources = ({ resources, getResources }) => {
     getResources();
   }, [getResources]);
 
-  return (
+  console.log(resources);
+
+  return resources != null ? (
     <div className="container">
       <div className="row">
         {resources.map((resource) => (
@@ -18,7 +20,9 @@ const Resources = ({ resources, getResources }) => {
         ))}
       </div>
     </div>
-  );
+  ) : (
+    <h1>Loading</h1>
+  )
 };
 
 const mapStateToProps = (state) => ({
