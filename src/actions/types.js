@@ -35,6 +35,7 @@ export const UPLOAD_RESOURCE = "UPLOAD_RESOURCE";
 export const UPDATE_RESOURCE_LIKES = "UPDATE_RESOURCE_LIKES";
 export const UPLOAD_ERROR = "UPLOAD_ERROR";
 export const LOG_EVENT = "LOG_EVENT";
+export const GET_LOG_BY_ID = "GET_LOG_BY_ID";
 export const LOG_ERROR = "LOG_ERROR";
 export const MESSAGE_ERROR = "MESSAGE_ERROR";
 export const ADD_MESSAGE = "ADD_MESSAGE";

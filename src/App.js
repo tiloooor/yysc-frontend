@@ -14,6 +14,7 @@ import Resource from './components/resource/Resource';
 import Resources from './components/resources/Resources';
 import PrivateRoute from './components/routing/PrivateRoute';
 import MessageDashboard from './components/messages/MessageDashboard';
+import UserLogs from './components/graphs/UserLogs';
 
 // Redux
 import store from './store';
@@ -52,6 +53,7 @@ const App = () => {
             <PrivateRoute exact path="/resources" component={Resources} />
             <PrivateRoute exact path="/resource/task" component={CreateTask} />
             <PrivateRoute exact path="/message" component={MessageDashboard} />
+            <PrivateRoute exact path="/log/:id" component={UserLogs} />
           </Switch>
         </div>
       </BrowserRouter>
