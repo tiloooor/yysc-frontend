@@ -28,6 +28,7 @@ const CreateResource = ({ auth: { user }, addResource }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     addResource(formData);
+    setFormData({ name: '', desc: '', links: [{ ...defaultInfo }] });
   };
 
   const addLink = (e) => {
