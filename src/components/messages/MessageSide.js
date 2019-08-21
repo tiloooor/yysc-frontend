@@ -31,8 +31,6 @@ const MessageSide = ({
     getConversation(channel);
   };
 
-  console.log(channels);
-
   return (
     <div>
       <input

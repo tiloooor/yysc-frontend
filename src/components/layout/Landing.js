@@ -21,6 +21,7 @@ const Landing = () => {
                     Get Started
                   </Link>
                 </div>
+                <Link id="create-admin-link" to="/admin/register">Create an Administrative Account?</Link>
               </div>
 
               <div className="col-md-6">

@@ -37,7 +37,8 @@ const ResourceItem = ({
       <h3>{name}</h3>
       <p>{desc}</p>
 
-      {links.map((link) => (
+
+      {links && links.map((link) => (
         <ReactPlayer
           url={link.url}
           onStart={(e) => logEvent(`Resource`, `Started`, `${link.url}`)}

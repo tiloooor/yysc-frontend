@@ -40,10 +40,10 @@ const Graph = () => {
 
   const data = (canvas) => {
     const ctx = canvas.getContext('2d');
-    const gradient = ctx.createLinearGradient(0, 0, 100, 0);
-    gradient.addColorStop(0, 'rgba(123, 30, 122, 0.2)');
-    gradient.addColorStop(0.5, 'rgba(123, 30, 122, 0.35)');
-    gradient.addColorStop(1, 'rgba(123, 30, 122, 0.7)');
+    const gradient = ctx.createLinearGradient(0, 0, 500, 0);
+    gradient.addColorStop(0, 'rgba(209, 207, 226, 0.2)');
+    gradient.addColorStop(0.5, 'rgba(149, 206, 215, 0.35)');
+    gradient.addColorStop(1, 'rgba(209, 207, 226, 0.7)');
 
     return {
       labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],

@@ -168,6 +168,20 @@
   margin-bottom: 1.5rem;
 }
 
+#graph-card {
+  height: 50vh;
+  margin: 3rem;
+}
+
+#dashboard-buttons {
+  width: 100%;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.dashboard-card {
+  width: 100%;
+}
 /* =============================================
 |   |   |   | Profile
 ============================================== */
@@ -443,12 +457,17 @@
 
 .buttons {
   margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .landing-img {
   width: 400px;
   height: 400px;
   margin: auto;
+}
+
+#create-admin-link {
+  color: #000;
 }
 
 

@@ -1,44 +1,75 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { getLikedResources } from '../../actions/resource';
-
 import { connect } from 'react-redux';
 
 import DailyTask from './DailyTask';
+import DashboardButtons from './DashboardButtons';
 import Graph from '../graphs/Graph';
 import RecentResources from './RecentResources';
+import UserTable from '../graphs/UserTable';
 
-const Dashboard = ({ auth: { user }, resources, getLikedResources }) => {
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+
+import { getLikedResources } from '../../actions/resource';
+import { getAllUsers } from '../../actions/user';
+
+const Dashboard = ({ auth: { user }, user: { users }, resources, getLikedResources, getAllUsers }) => {
   useEffect(() => {
     if (user) {
       getLikedResources(user._id);
     }
   }, [getLikedResources, user]);
 
+  useEffect(() => {
+    getAllUsers();
+  }, [getAllUsers]);
+
   const adminButtons = (
-    <div>
-      <Link to="/resource/task">
-        <button type="button" className="btn btn-general">
-          Create Task
-        </button>
-      </Link>
-      <Link to="/upload">
-        <button type="button" className="btn btn-general">
-          Upload Resource
-        </button>
-      </Link>
+    <div className="row">
+      <div className="col-md-4">
+        <Link to="/resource/task">
+          <Card>
+            <CardContent>Create Task</CardContent>
+          </Card>
+        </Link>
+      </div>
+
+      <div className="col-md-4">
+        <Link to="/upload">
+          <Card>
+            <CardContent>Upload Resource</CardContent>
+          </Card>
+        </Link>
+      </div>
+
+      <div className="col-md-4">
+        <Link to="/message">
+          <Card>
+            <CardContent>Messages</CardContent>
+          </Card>
+        </Link>
+      </div>
     </div>
   );
 
-  return user != null && resources ? (
+  return user != null && resources && users ? (
     <div className="container">
       {user.admin ? (
-        <div>{adminButtons}</div>
+        <div>
+          {adminButtons}
+          <UserTable users={users}  />
+        </div>
       ) : (
         <div>
           <DailyTask />
-          <Graph />
+          <DashboardButtons id={user._id} />
+          <Card id="graph-card">
+            <CardContent>
+              <Graph />
+            </CardContent>
+          </Card>
           <RecentResources resources={resources} />
         </div>
       )}
@@ -50,10 +81,11 @@ const Dashboard = ({ auth: { user }, resources, getLikedResources }) => {
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
-  resources: state.resource.resources
+  resources: state.resource.resources,
+  user: state.user
 });
 
 export default connect(
   mapStateToProps,
-  { getLikedResources }
+  { getLikedResources, getAllUsers }
 )(Dashboard);
